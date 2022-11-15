@@ -11,5 +11,9 @@ Steps to Work with git:
 
 < Creating Conda Environment : conda create -p venv python==3.9 -y
 
-Activate Conda Environment : conda activate venv/
+Activate Conda Environment : conda activate venv
 ```
+
+Hello World
+```
+
