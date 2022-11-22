@@ -13,7 +13,11 @@ Steps to Work with git:
 
 Activate Conda Environment : conda activate venv
 ```
-
 Hello World
 ```
 
+To Setup CI/CD Pipeline We need 3 following informations:
+
+1. Heroku API Key : 2d3571bb-a583-4082-a47d-5adccfe5ac24
+2. Heroku App Name : ml-project-1-end-to-end
+3. Heroku Email-ID : asahu40@hotmail.com
