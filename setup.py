@@ -6,7 +6,7 @@ from typing import List
 Project_Name = "housing-Predictor"
 Version = "0.0.1"
 Author = "Amit Kumar Sahu"
-Description = "This is FSDS Nov Batch first Machine Learning Project(End to End"
+Description = "This is FSDS Nov Batch first Machine Learning Project (End to End)"
 ##Folder = ["housing"]
 ##Requirement_File = "requirements.txt"
 Requirement_File = r"E:\Study Material\Data Science\INeuron\Full Stack Data Science\Projects\Machine Learning Project (End to End )\INeuron_ML_Project_1\ML_Project\requirements.txt"
