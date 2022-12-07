@@ -165,7 +165,7 @@ class Configuration:
                 base_accuracy = base_accuracy
             )
 
-            logging.info(f"Model_trainer_config :{model_trainer_config}")
+            logging.info(f"Model trainer config :{model_trainer_config}")
             return model_trainer_config
 
         except Exception as e :
@@ -187,13 +187,28 @@ class Configuration:
                 model_evaluation_file_path = model_evaluation_file_path ,
                 time_stamp = self.time_stamp
             )
-            logging.info(f"Model_Evaluation_Config :{response}")
+            logging.info(f"Model Evaluation Config :{response}")
             return response
         except Exception as e :
             raise HousingException (e , sys) from e
 
     def get_model_pusher_config(self) -> ModelPusherConfig:
-        pass
+        try :
+            time_stamp = CURRENT_TIME_STAMP
+            model_pusher_config_info = self.config_info[MODEL_PUSHER_CONFIG_KEY]
+            export_dir_path = os.path.join(
+                ROOT_DIR , 
+                model_pusher_config_info[MODEL_PUSHER_MODEL_EXPORT_DIR_KEY],
+                time_stamp
+            )
+            model_pusher_config = ModelPusherConfig(
+                export_dir_path = export_dir_path
+            )
+            logging.info(f"Model Pusher Config : {model_pusher_config}")
+            return model_pusher_config
+
+        except Exception as e :
+            raise HousingException (e ,sys) from e
 
     def get_training_pipeline_config(self) -> TrainingPipelineConfig:
         try :
