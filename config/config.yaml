@@ -21,7 +21,7 @@ data_transformation_config:
   transformed_dir: transformed_data
   transformed_train_dir: train
   transformed_test_dir: test
-  preprocessed_dir: preprocessed
+  preprocessing_dir: preprocessed
   preprocessed_object_file_name: preprocessed.pkl
 
 model_trainer_config:
