@@ -14,7 +14,7 @@ class Configuration:
         current_time_stamp : str = CURRENT_TIME_STAMP
         ) -> None :
         try:
-            self.config_file_path = read_yaml_file(file_path=config_file_path)
+            self.config_info = read_yaml_file(file_path=config_file_path)
             self.training_pipline_config = self.get_training_pipeline_config()
             self.time_stamp = current_time_stamp
         except Exception as e :
@@ -127,9 +127,9 @@ class Configuration:
                 data_transformation_info[DATA_TRANSFORMATION_PREPROCESSED_OBJECT_FILE_KEY]
             )
             data_transformation_config = DataTransforamtionConfig(
-                add_bedroom_per_room = add_bedroom_per_room
-                preprocessed_object_file_path = preprocessed_object_file_path
-                transformed_train_dir = transformed_train_dir
+                add_bedroom_per_room = add_bedroom_per_room,
+                preprocessed_object_file_path = preprocessed_object_file_path,
+                transformed_train_dir = transformed_train_dir,
                 transformed_test_dir = transformed_test_dir
             )
             logging.info(f" Data Transformation Config : {data_transformation_config}")
@@ -160,7 +160,7 @@ class Configuration:
             base_accuracy = model_trainer_config_info[MODEL_TRAINER_BASE_ACCURACY_KEY]
 
             model_trainer_config = ModelTrainerConfig (
-                trained_model_file_path = trained_model_file_path,
+                trained_model_path = trained_model_path,
                 model_config_file_path = model_config_file_path,
                 base_accuracy = base_accuracy
             )
