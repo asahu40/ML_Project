@@ -5,7 +5,7 @@ from datetime import datetime
 ROOT_DIR = os.getcwd()  # To Get current Working Directory
 
 CONFIG_DIR = "config"
-CONFIG_FILE = "config_yaml"
+CONFIG_FILE = "config.yaml"
 CONFIG_FILE_PATH = os.path.join(ROOT_DIR , CONFIG_DIR , CONFIG_FILE)
 
 CURRENT_TIME_STAMP = f"{datetime.now().strftime('%Y-%m-%d-%H-%M-%S')}"

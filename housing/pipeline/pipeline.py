@@ -58,7 +58,7 @@ class Pipeline :
         try :
             ## Data Ingestion 
             data_ingestion_artifact = self.start_data_ingestion()
-            logging.info
+            self.run_pipeline()
 
         except Exception as e :
             raise HousingException (e ,sys)from e 
