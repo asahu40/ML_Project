@@ -48,7 +48,7 @@ class DataIngestion():
         except Exception as e :
             raise HousingException (e , sys) from e 
  
-    def extract_tgz_data(self,tgz_file_path -> str):
+    def extract_tgz_data(self,tgz_file_path):
         try :
             raw_data_dir = self.data_ingestion_config.raw_data_dir
 
