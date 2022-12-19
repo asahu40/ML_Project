@@ -22,10 +22,11 @@ class HousingException(Exception):
         file_name = exec_tab.tb_frame.f_code.co_filename
         error_message = f"""
         Error Occured in script : 
-        [{file_name}] at 
-        try_block_line_number : [{try_block_line_number}] and the exception block line number : [{exception_block_line_number}]
-        the error is : [{error_message}]
+        [  {file_name}  ] at 
+        try block line number: [{try_block_line_number}]and exception block line number : [{exception_block_line_number}]
+        the error message  is : [{error_message}]
         """
+        
         return error_message
 
     def __str__(self):
