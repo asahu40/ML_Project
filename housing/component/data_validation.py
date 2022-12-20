@@ -4,6 +4,8 @@ from housing.entity.config_entity import DataValidationConfig
 from housing.entity.artifact_entity import DataIngestionArtifact
 import os , sys
 
+from 
+
 
 
 class DataValidation :
@@ -36,7 +38,7 @@ class DataValidation :
                 message = f"Training file : {train_file} or testing file : {test_file} is not present in the directory"
                 logging.info(message)
                 raise Exception (message)
-                
+
             return is_available
 
         except Exception as e :
@@ -49,12 +51,32 @@ class DataValidation :
         except Exception as e :
             raise HousingException (e,sys) from e 
 
+    def save_data_drift_report(self):
+        try :
+            pass
+        except Exception as e :
+            raise HousingException (e,sys) from e
+
+    def save_data_drift_report_page(self):
+        try :
+            pass
+        except Exception as e :
+            raise HousingException (e,sys) from e 
+
+    
+    def is_data_drift_found(self) -> bool:
+        try :
+            pass
+        except Exception as e :
+            raise HousingException (e,sys) from e
+
 
     def initiate_data_validation(self):
         try :
-            is_available = self.is_train_test_file_exists()
+            self.is_train_test_file_exists()
+            self.validate_dataset_schema()
+            self.is_data_drift_found()
 
-            
 
         except Exception as e :
             raise HousingException (e,sys) from e 

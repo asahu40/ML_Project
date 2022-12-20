@@ -6,4 +6,5 @@ numpy
 sklearn
 matplotlib
 six
+evidently
 -e .
