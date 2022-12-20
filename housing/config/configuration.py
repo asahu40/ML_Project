@@ -76,8 +76,7 @@ class Configuration:
                 self.time_stamp
             )
             data_validation_info = self.config_info[DATA_INGESTION_CONFIG_KEY]
-            schema_file_path = os.path.join(
-                data_validation_artifact_dir ,
+            schema_file_path = os.path.join(ROOT_DIR,
                 data_validation_info[DATA_VALIDATION_SCHEMA_DIR_KEY],
                 data_validation_info[DATA_VALIDATION_SCHEMA_FILE_NAME_KEY]
             )
