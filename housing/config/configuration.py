@@ -43,7 +43,7 @@ class Configuration:
             )
             ingested_data_dir = os.path.join(
                 data_ingestion_artifact_dir , 
-                data_ingestion_info[DATA_INGESTION_DIR_NAME_KEY]
+                data_ingestion_info[DATA_INGESTION_INGESTED_DIR_NAME_KEY]
             )
             ingested_train_dir = os.path.join(
                 ingested_data_dir ,
@@ -75,7 +75,7 @@ class Configuration:
                 DATA_VALIDATION_ARTIFACT_DIR,
                 self.time_stamp
             )
-            data_validation_info = self.config_info[DATA_INGESTION_CONFIG_KEY]
+            data_validation_info = self.config_info[DATA_VALIDATION_CONFIG_KEY]
             schema_file_path = os.path.join(ROOT_DIR,
                 data_validation_info[DATA_VALIDATION_SCHEMA_DIR_KEY],
                 data_validation_info[DATA_VALIDATION_SCHEMA_FILE_NAME_KEY]
