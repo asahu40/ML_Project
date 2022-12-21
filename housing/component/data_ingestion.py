@@ -112,7 +112,7 @@ class DataIngestion():
             data_ingestion_artifact = DataIngestionArtifact(train_file_path=train_file_path,
                                         test_file_path=test_file_path,
                                         is_ingested= True,
-                                        maesaage="Data Ingested Successfully Completed"
+                                        message="Data Ingested Successfully Completed"
                                         )
             
             logging.info(f"Data Ingestion Artifact : [{data_ingestion_artifact}]")
