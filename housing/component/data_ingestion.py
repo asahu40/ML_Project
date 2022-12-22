@@ -28,8 +28,8 @@ class DataIngestion():
             ## Folder Location to download file
             tgz_download_dir = self.data_ingestion_config.tgz_download_dir
 
-            if os.path.exists(tgz_download_dir):
-                os.remove(tgz_download_dir)
+            #if os.path.exists(tgz_download_dir):
+                #os.remove(tgz_download_dir)
 
             os.makedirs(tgz_download_dir,exist_ok=True)
 
@@ -52,8 +52,8 @@ class DataIngestion():
         try :
             raw_data_dir = self.data_ingestion_config.raw_data_dir
 
-            if os.path.exists(raw_data_dir):
-                os.remove(raw_data_dir)
+            #if os.path.exists(raw_data_dir):
+                #os.remove(raw_data_dir)
             
             os.makedirs(raw_data_dir,exist_ok=True)
 

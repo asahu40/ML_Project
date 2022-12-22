@@ -8,7 +8,8 @@ __pycache__/
 
 # Folders
  5.4.1
-
+ housing\artifact
+ 
 # Distribution / packaging
 .Python
 build/

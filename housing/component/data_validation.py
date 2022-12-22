@@ -60,8 +60,21 @@ class DataValidation :
     def validate_dataset_schema(self):
         try :
             pass
+
+             #Assigment validate training and testing dataset using schema file
+            #1. Number of Column
+            #2. Check the value of ocean proximity 
+            # acceptable values     <1H OCEAN
+            # INLAND
+            # ISLAND
+            # NEAR BAY
+            # NEAR OCEAN
+            #3. Check column names
+
         except Exception as e :
             raise HousingException (e,sys) from e 
+
+    # Write a function to get training file path from the data ingestion artifact dir
 
     def get_and_save_data_drift_report(self):
         try :
