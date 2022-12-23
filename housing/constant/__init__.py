@@ -44,6 +44,16 @@ DATA_TRANSFORMATION_PREPROCESSING_DIR_KEY = "preprocessing_dir"
 DATA_TRANSFORMATION_PREPROCESSED_OBJECT_FILE_KEY = "preprocessed_object_file_name"
 
 
+COLUMN_TOTAL_ROOMS = "total_rooms"
+COLUMN_POPULATION = "polulation"
+COLUMN_HOUSEHOLDS = "households"
+COLUMN_TOTAL_BEDROOM = "total_bedrooms"
+DATASET_SCHEMA_COLUMNS_KEY = "columns"
+
+NUMERICAL_COLUMN_KEY = "numerical_columns"
+CATEGORICAL_COLUMN_KEY = "categorical_columns"
+
+
 ## Model Trainer Related Variable
 MODEL_TRAINER_ARTIFACT_DIR = "model_trainer"
 MODEL_TRAINER_CONFIG_KEY = "model_trainer_config"
@@ -63,3 +73,4 @@ MODEL_EVALUATION_FILE_NAME_KEY = "model_evaluation_file_name"
 MODEL_PUSHER_ARTIFACT_DIR = "model_pusher"
 MODEL_PUSHER_CONFIG_KEY = "model_pusher_config"
 MODEL_PUSHER_MODEL_EXPORT_DIR_KEY = "model_export_dir"
+

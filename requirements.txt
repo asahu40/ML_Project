@@ -7,4 +7,5 @@ sklearn
 matplotlib
 six
 evidently
+dill
 -e .
