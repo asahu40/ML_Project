@@ -2,7 +2,7 @@ from housing.logger import logging
 from housing.exception import HousingException
 import os,sys
 from housing.entity.config_entity import  DataTransformationConfig
-from housing.entity.artifact_entity import DataIngestionArtifact , DataValidationArtifact
+from housing.entity.artifact_entity import DataIngestionArtifact , DataValidationArtifact , DataTransformationArtifact
 from housing.constant import *
 import pandas as pd
 import numpy as np
@@ -11,7 +11,7 @@ from sklearn.preprocessing import StandardScaler , OneHotEncoder
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
-from housing.util.util import read_yaml_file
+from housing.util.util import read_yaml_file,save_numpy_array_data,save_object,load_data,load_object,load_numpy_array_data
 
 
 # longitude: float64
@@ -79,7 +79,7 @@ class FeatureGenerator(BaseEstimator , TransformerMixin):
             return generated_feature
 
         except Exception as e :
-            raise HousingException (e,sys) from e 
+            raise HousingException (e,sys) from e     
 
 
 class DataTransformation :
@@ -97,35 +97,8 @@ class DataTransformation :
         except Exception as e :
 
             raise HousingException (e,sys) from e 
-
-    @staticmethod
-    def load_data(file_path : str , schema_file_path : str) : pd.DataFrame :
-
-        try :
-            dataset_schema = read_yaml_file(schema_file_path)
-
-            schema = dataset_schema[DATASET_SCHEMA_COLUMNS_KEY]
-
-            dataframe = pd.read_csv(file_path)
-
-            error_message = " "
-
-            for column in dataframe.columns:
-                if column in list(schema.keys()):
-                    dataframe[column].astype(schema[column])
-
-                else :
-                    error_message = f"{error_message} \nColumn: [{column}] is not in the schema." 
-
-                if len(error_message) > 0:
-                    raise Exception (error_message)
-                
-            return dataframe
-
-        except Exception as e :
-            raise HousingException (e,sys) from e 
-
-
+   
+    
     def get_data_transformer_object(self)-> ColumnTransformer :
 
         try :
@@ -142,7 +115,7 @@ class DataTransformation :
                 (columns  = numerical_columns)
             ]
             )
-            
+
             cat_pipeline = Pipeline(steps=[
                 ('imputer' , SimpleImputer(strategy='most_frequent')),
                 ('one_hot_encoder' , OneHotEncoder()),
@@ -160,8 +133,31 @@ class DataTransformation :
             )
 
         except Exception as e :
-
             raise HousingException (e,sys) from e 
+
+    def initiate_data_transformation(self) -> DataTransformationArtifact :
+
+        try :            
+            
+            preprocessing_obj = self.get_data_transformer_object
+            
+            train_file_path = self.data_ingestion_artifact.train_file_path
+            test_file_path = self.data_ingestion_artifact.test_file_path
+
+            schema_file_path = self.data_validation_artifact.schema_file_path
+
+            train_df = load_data(file_path=train_file_path , schema_file_path=schema_file_path)
+
+            test_df = load_data(file_path=test_file_path , schema_file_path=schema_file_path)
+
+            schema = read_yaml_file(schema_file_path = schema_file_path)
+
+            target_column_name = schema[TARGET_COLUMN_KEY]
+
+            input_feature = train_df.drop
+
+        except Exception as e :
+            raise HousingException(e,sys) from e 
 
 
     

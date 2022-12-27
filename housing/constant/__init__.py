@@ -53,6 +53,8 @@ DATASET_SCHEMA_COLUMNS_KEY = "columns"
 NUMERICAL_COLUMN_KEY = "numerical_columns"
 CATEGORICAL_COLUMN_KEY = "categorical_columns"
 
+TARGET_COLUMN_KEY = "target_column"
+
 
 ## Model Trainer Related Variable
 MODEL_TRAINER_ARTIFACT_DIR = "model_trainer"
