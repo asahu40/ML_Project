@@ -90,6 +90,7 @@ class DataTransformation :
                  ):
 
         try :
+            logging.info(f"{'>>'*20} Data Transformation Log Started.{'<<'*20}\n \n")
             self.data_transformation_config = data_transformation_config
             self.data_ingestion_artifact = data_ingestion_artifact
             self.data_validation_artifact = data_validation_artifact
@@ -200,6 +201,10 @@ class DataTransformation :
 
         except Exception as e :
             raise HousingException(e,sys) from e 
+
+
+    def __del__(self):
+        logging.info(f"{'>>'*20} Data Transformation Log Completed.{'<<'*20}\n \n")
 
 
     
