@@ -5,12 +5,12 @@ from housing.config.configuration import Configuration
 
 def main():
     try :
-        #pipeline = Pipeline()
-        #pipeline.run_pipeline()
+        pipeline = Pipeline()
+        pipeline.run_pipeline()
         #data_ingestion_config = Configuration().get_data_ingestion_config()
         #print(data_ingestion_config)
-        data_validation_config = Configuration().get_data_validation_config()
-        print(data_validation_config)
+        #data_validation_config = Configuration().get_data_validation_config()
+        #print(data_validation_config)
         #data_transformation_config = Configuration().get_data_transformation_config()
         #print(data_transformation_config)
         
