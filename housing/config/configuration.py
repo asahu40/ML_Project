@@ -147,7 +147,7 @@ class Configuration:
                 self.time_stamp
             )
             model_trainer_config_info = self.config_info[MODEL_TRAINER_CONFIG_DIR_KEY]
-            trained_model_path = os.path.join(
+            trained_model_file_path = os.path.join(
                 model_trainer_artifact_dir,
                 model_trainer_config_info[MODEL_TRAINER_TRAINED_MODEL_DIR_KEY],
                 model_trainer_config_info[MODEL_TRAINER_TRAINED_MODEL_FILE_NAME_KEY]
@@ -159,7 +159,7 @@ class Configuration:
             )
             base_accuracy = model_trainer_config_info[MODEL_TRAINER_BASE_ACCURACY_KEY]
 
-            model_trainer_config = ModelTrainerConfig (trained_model_path = trained_model_path,
+            model_trainer_config = ModelTrainerConfig (trained_model_file_path = trained_model_file_path,
                                                        model_config_file_path = model_config_file_path,
                                                        base_accuracy = base_accuracy
                                                       )
