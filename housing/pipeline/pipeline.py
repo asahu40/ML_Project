@@ -1,7 +1,7 @@
 from housing.config.configuration import Configuration
 from housing.logger import logging
 from housing.exception import HousingException
-from housing.entity.config_entity import DataIngestionConfig,ModelTrainerConfig
+from housing.entity.config_entity import DataIngestionConfig,DataValidationConfig,DataTransformationConfig
 from housing.entity.artifact_entity import DataIngestionArtifact , DataValidationArtifact,DataTransformationArtifact,ModelTrainerArtifact
 from housing.component.data_ingestion import DataIngestion
 from housing.component.data_validation import DataValidation
