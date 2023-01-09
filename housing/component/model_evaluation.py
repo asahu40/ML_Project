@@ -119,11 +119,36 @@ class ModelEvaluation :
                 logging.info(f"Model Accepted.Model Eval artifact{model_evaluation_artifact} created")
                 return model_evaluation_artifact
 
-                model_list = [model , trained_model_object]
+            model_list = [model , trained_model_object]
 
-                metric_info_artifact = evaluate_regression_model(model_list=model_list)
+            metric_info_artifact = evaluate_regression_model(model_list=model_list,
+                                                             X_train=train_dataframe,
+                                                             y_train=train_target_arr,
+                                                             X_test=test_dataframe,
+                                                             y_test=test_target_arr,
+                                                             base_accuracy=self.model_trainer_artifact.model_accuracy)
 
+            logging.info(f"Model Evaluation Completed.model metric artifact :{metric_info_artifact}")
 
+            if metric_info_artifact is None :
+                response = ModelEvaluationArtifact(is_model_accepted=False , evaluated_model_path=trained_model_file_path)
+                logging.info(response)
+                return response
+
+            if metric_info_artifact.index_number == 1 :
+                model_evaluation_artifact = ModelEvaluationArtifact(is_model_accepted=True , evaluated_model_path=trained_model_file_path)
+                self.update_evaluation_report(model_evaluation_artifact)
+                logging.info(f"Model Accepted.Model eval artifact : {model_evaluation_artifact} created.")
+
+            else : 
+                logging.info(f"Trained model is no better than existing model hence not accetping train model.")
+                model_evaluation_artifact = ModelEvaluationArtifact(is_model_accepted=False , evaluated_model_path=trained_model_file_path)
+
+            return model_evaluation_artifact
         
         except Exception as e :
             raise HousingException (e,sys) from e
+
+        
+    def __del__(self):
+        logging.info(f"{'=' * 20}Model Evaluation log completed.{'=' * 20}")
