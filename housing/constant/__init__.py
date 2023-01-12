@@ -45,7 +45,7 @@ DATA_TRANSFORMATION_PREPROCESSED_OBJECT_FILE_KEY = "preprocessed_object_file_nam
 
 
 COLUMN_TOTAL_ROOMS = "total_rooms"
-COLUMN_POPULATION = "polulation"
+COLUMN_POPULATION = "population"
 COLUMN_HOUSEHOLDS = "households"
 COLUMN_TOTAL_BEDROOM = "total_bedrooms"
 DATASET_SCHEMA_COLUMNS_KEY = "columns"

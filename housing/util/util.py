@@ -107,16 +107,23 @@ def load_data(file_path : str , schema_file_path : str) -> pd.DataFrame :
         error_message = " "
 
         for column in dataframe.columns:
-            if column in list(schema.keys()):
-                dataframe[column].astype(schema[column])
 
+            #if column in list(schema.keys()):
+            #if column in schema:
+                #dataframe[column] = dataframe[column].astype(schema[column]) 
+
+            if column not in schema:
+                error_message = f"{error_message} \nColumn: [{column}] is not in the schema."            
+
+            #else :
+                #error_message = f"{error_message} \nColumn: [{column}] is not in the schema." 
+
+        #if len(error_message) > 0:
+            #raise Exception(error_message)  
             else :
-                error_message = f"{error_message} \nColumn: [{column}] is not in the schema." 
 
-            if len(error_message) > 0:
-                raise Exception (error_message)
-            
-        return dataframe
+                dataframe = dataframe[column].astype(schema[column])
+            return dataframe                 
 
     except Exception as e :
         raise HousingException (e,sys) from e 

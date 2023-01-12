@@ -18,7 +18,7 @@ class ModelEvaluation :
                   model_trainer_artifact = ModelTrainerArtifact):
 
         try :
-            logging.info(f"{">"*20} Model Evaluation Log Started.{"<"* 20}")
+            logging.info(f"{'>'*20} Model Evaluation Log Started.{'<' * 20}")
             self.model_evaluation_config = model_evaluation_config
             self.data_ingestion_artifact = data_ingestion_artifact
             self.data_validation_artifact = data_validation_artifact
