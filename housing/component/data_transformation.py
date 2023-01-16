@@ -11,6 +11,8 @@ from sklearn.preprocessing import StandardScaler , OneHotEncoder
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
+from sklearn import preprocessing
+from cgi import test
 from housing.util.util import read_yaml_file,save_numpy_array_data,save_object,load_data,load_object,load_numpy_array_data
 
 
@@ -186,7 +188,7 @@ class DataTransformation :
             save_numpy_array_data(file_path=transformed_test_dir , array=test_arr)
 
             preprocessing_obj_file_path = self.data_transformation_config.preprocessed_object_file_path
-            save_object(file_path=preprocessing_obj_file_path ,obj = preprocessing_obj)
+            save_object(file_path=preprocessing_obj_file_path , obj = preprocessing_obj)
 
             logging.info(f"Saving Preprocessing Object")
             data_transformation_artifact = DataTransformationArtifact(is_transformed=True ,
