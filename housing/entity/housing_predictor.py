@@ -57,8 +57,8 @@ class HousingData:
                 "population" : [self.population],
                 "households" : [self.households],
                 "median_income" : [self.median_income],
-                "ocean_proximity" : [self.ocean_proximity],
-                "median_house_value" : [self.median_house_value]
+                "ocean_proximity" : [self.ocean_proximity]
+                
             }
 
             return input_data
